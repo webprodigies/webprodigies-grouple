@@ -90,6 +90,7 @@ const items: SelectorItem[] = [
         .chain()
         .focus()
         .toggleNode("paragraph", "paragraph")
+        // @ts-ignore
         .toggleBlockquote()
         .run(),
     isActive: (editor: any) => editor.isActive("blockquote"),

@@ -122,6 +122,7 @@ export const suggestionItems = createSuggestionItems([
         .focus()
         .deleteRange(range)
         .toggleNode("paragraph", "paragraph")
+        // @ts-ignore
         .toggleBlockquote()
         .run(),
   },
