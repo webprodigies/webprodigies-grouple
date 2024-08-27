@@ -97,6 +97,7 @@ export const suggestionItems = createSuggestionItems([
     searchTerms: ["unordered", "point"],
     icon: <List size={18} />,
     command: ({ editor, range }) => {
+      //@ts-ignore
       editor.chain().focus().deleteRange(range).toggleBulletList().run()
     },
   },
@@ -106,6 +107,7 @@ export const suggestionItems = createSuggestionItems([
     searchTerms: ["ordered"],
     icon: <ListOrdered size={18} />,
     command: ({ editor, range }) => {
+      //@ts-ignore
       editor.chain().focus().deleteRange(range).toggleOrderedList().run()
     },
   },
@@ -129,6 +131,7 @@ export const suggestionItems = createSuggestionItems([
     searchTerms: ["codeblock"],
     icon: <Code size={18} />,
     command: ({ editor, range }) =>
+      //@ts-ignore
       editor.chain().focus().deleteRange(range).toggleCodeBlock().run(),
   },
   {
