@@ -1,5 +1,6 @@
 "use client"
 import { cn } from "@/lib/utils"
+import { ErrorMessage } from "@hookform/error-message"
 import Placeholder from "@tiptap/extension-placeholder"
 import {
   EditorBubble,
@@ -22,7 +23,6 @@ import NodeSelector from "./node-selector"
 import { slashCommand, suggestionItems } from "./slash-command"
 import { TextButtons } from "./text-slector"
 import { Video } from "./video"
-import { ErrorMessage } from "@hookform/error-message"
 
 type Props = {
   content: JSONContent | undefined
@@ -86,15 +86,21 @@ const BlockTextEditor = ({
               },
             }}
             extensions={[
+              // @ts-ignore
               ...defaultExtensions,
+              // @ts-ignore
               slashCommand,
+              // @ts-ignore
               CharacterCount.configure({
                 limit: max,
               }),
+              // @ts-ignore
               Placeholder.configure({
                 placeholder: "Type / to insert element...",
               }),
+              // @ts-ignore
               Video,
+              // @ts-ignore
               Image,
             ]}
             onUpdate={({ editor }) => {
