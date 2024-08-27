@@ -1,0 +1,231 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  --scroll-behavior: smooth !important;
+  scroll-behavior: smooth !important;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 222.2 47.4% 11.2%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 222.2 84% 4.9%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.radial {
+  background-image: radial-gradient(
+    ellipse farthest-side,
+    white,
+    #716768,
+    black
+  );
+  background-size: 100% 90%;
+  background-repeat: no-repeat;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #4a4e58, white, #716768);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-radial {
+  background-image: radial-gradient(
+    ellipse farthest-side,
+    rgba(113, 103, 104, 0.2) 30%,
+    black 70%
+  );
+  background-size: 100% 50%;
+  background-repeat: no-repeat;
+}
+
+.text-radial--circle {
+  background-image: radial-gradient(
+    circle farthest-side,
+    rgba(113, 103, 104, 0.35) 20%,
+    black 70%
+  );
+  background-size: 50% 70%;
+  background-repeat: no-repeat;
+  background-position: top center;
+}
+
+.backdrop--blur__safari {
+  -webkit-backdrop-filter: blur(5px);
+}
+
+.radial--blur {
+  -webkit-backdrop-filter: blur(100px);
+  filter: blur(100px);
+  background: #877874;
+}
+
+@media only screen and (max-width: 800px) {
+  .text-radial--circle {
+    background-image: radial-gradient(
+      circle farthest-side,
+      rgba(113, 103, 104, 0.2) 20%,
+      black 70%
+    );
+    background-size: 100% 50%;
+    background-repeat: no-repeat;
+    background-position: top center;
+  }
+}
+
+.swiper-autoheight .swiper-slide {
+  height: 100% !important;
+}
+
+.content-width-slide {
+  width: fit-content !important;
+}
+
+.img--overlay {
+  background-image: -webkit-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1)
+  ); /* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */
+  background-image: -moz-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1)
+  ); /* For Firefox (3.6 to 15) */
+  background-image: -o-linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1)
+  ); /* For old Opera (11.1 to 12.0) */
+  background-image: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 1)
+  ); /* Standard syntax; must be last */
+}
+
+.slider-overlay {
+  background-image: -webkit-linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0)
+  ); /* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */
+  background-image: -moz-linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0)
+  ); /* For Firefox (3.6 to 15) */
+  background-image: -o-linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0)
+  ); /* For old Opera (11.1 to 12.0) */
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 1),
+    rgba(0, 0, 0, 0)
+  ); /* Standard syntax; must be last */
+}
+
+.slider-overlay-rev {
+  background-image: -webkit-linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 1)
+  ); /* For Chrome 25 and Safari 6, iOS 6.1, Android 4.3 */
+  background-image: -moz-linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 1)
+  ); /* For Firefox (3.6 to 15) */
+  background-image: -o-linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 1)
+  ); /* For old Opera (11.1 to 12.0) */
+  background-image: linear-gradient(
+    to right,
+    rgba(0, 0, 0, 0),
+    rgba(0, 0, 0, 0.8),
+    rgba(0, 0, 0, 1)
+  ); /* Standard syntax; must be last */
+}
+
+.tiptap p.is-editor-empty:first-child::before {
+  color: #adb5bd;
+  content: attr(data-placeholder);
+  float: left;
+  height: 0;
+  pointer-events: none;
+}
