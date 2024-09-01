@@ -12,7 +12,12 @@ type SliderProps = {
 
 export const Slider = ({ children, overlay, label, ...rest }: SliderProps) => {
   return (
-    <div className="w-full max-w-full overflow-x-hidden mt-5 relative  ">
+    <div
+      style={{
+        maskImage: `linear-gradient(to right,rgba(0, 0, 0, 0),rgba(0, 0, 0, 1) 20%,rgba(0, 0, 0, 1) 80%,rgba(0, 0, 0, 0))`,
+      }}
+      className="w-full max-w-full overflow-x-hidden mt-5 relative  "
+    >
       {overlay && (
         <>
           <div className="absolute w-[40px] slider-overlay left-0 h-full z-50" />
